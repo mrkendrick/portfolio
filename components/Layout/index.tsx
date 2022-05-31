@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
   if (!mounted) return null
 
   return (
-    <main className="min-h-screen relative bg-slate-50 dark:bg-gray-900 transition-ease duration-500">
+    <main className="min-h-screen relative bg-slate-50 dark:bg-gray-900 transition-ease duration-500 text-slate-800 dark:text-slate-100">
       <Navigation />
       <section>{children}</section>
     </main>
