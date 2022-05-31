@@ -5,7 +5,7 @@ import { v4 } from 'uuid'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const links = [
+export const links = [
   {
     id: v4(),
     name: 'About Me',
