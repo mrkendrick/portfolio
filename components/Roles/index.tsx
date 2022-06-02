@@ -1,5 +1,6 @@
 import React from 'react'
 import { v4 } from 'uuid'
+import { roles } from '../../data'
 import SectionTitle from '../SectionTitle'
 
 type RoleItemProps = {
@@ -8,37 +9,6 @@ type RoleItemProps = {
   icon: string
   activities: string
 }
-
-const roles = [
-  {
-    id: v4(),
-    role: 'Frontend Development',
-    icon: 'devices',
-    activities:
-      'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.',
-  },
-  {
-    id: v4(),
-    role: 'Backend Development',
-    icon: 'storage',
-    activities:
-      'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.',
-  },
-  {
-    id: v4(),
-    role: 'DevOps Engineering',
-    icon: 'hub',
-    activities:
-      'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.',
-  },
-  {
-    id: v4(),
-    role: 'Mobile App Development',
-    icon: 'developer_mode',
-    activities:
-      'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.',
-  },
-]
 
 const RoleItem = ({ activities, icon, key, role }: RoleItemProps) => (
   <article key={key} className="flex items-start space-x-5">
@@ -55,7 +25,7 @@ const RoleItem = ({ activities, icon, key, role }: RoleItemProps) => (
 const Roles = () => {
   return (
     <section className="mt-36 w-[65%] mx-auto">
-      <SectionTitle width={7} title="What I Do" />
+      <SectionTitle title="What I Do" />
 
       <div className="grid grid-cols-2 w-full mt-10 gap-10">
         {roles.map((data) => (
