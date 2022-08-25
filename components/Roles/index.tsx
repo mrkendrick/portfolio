@@ -1,17 +1,15 @@
 import React from 'react'
-import { v4 } from 'uuid'
 import { roles } from '../../data'
 import SectionTitle from '../SectionTitle'
 
 type RoleItemProps = {
-  key: string
   role: string
   icon: string
   activities: string
 }
 
-const RoleItem = ({ activities, icon, key, role }: RoleItemProps) => (
-  <article key={key} className="flex items-start space-x-5">
+const RoleItem = ({ activities, icon, role }: RoleItemProps) => (
+  <article className="flex items-start space-x-5">
     <span className="material-symbols-outlined text-4xl text-blue-500 ">
       {icon}
     </span>
