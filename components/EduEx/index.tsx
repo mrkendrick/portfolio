@@ -1,30 +1,43 @@
 import React from 'react'
-import { education, experience } from '../../data'
+import { Educations, Experiences } from '../../utils/types'
 import SectionTitle from '../SectionTitle'
 
-const EduEx = () => {
+type Props = {
+  educations: Educations
+  experiences: Experiences
+}
+
+const EduEx = ({ educations, experiences }: Props) => {
   return (
     <section className="flex items-start justify-between space-x-10 mt-28 w-[70%] mx-auto">
       <section>
         <SectionTitle title="Education" />
         <div className="mt-10 ml-5">
-          {education.map((data, i) => (
+          {educations.data.map((data, i) => (
             <article
               className={`px-8 pb-6 pt-14 relative ${
-                i + 1 === education.length ? 'border-b-0' : 'border-b'
+                i + 1 === educations.data.length ? 'border-b-0' : 'border-b'
               } border-l border-stone-300 dark:border-stone-700 flex flex-col space-y-2`}
               key={data.id}
             >
               <div className="flex items-center space-x-3 absolute top-4 bg-slate-50 dark:bg-gray-900 -left-5">
                 <span className="px-4 py-1 text-sm border-2 border-blue-500 rounded-full">
-                  {data.timeline}
+                  {`${data.attributes.edu_desc.start}${
+                    data.attributes.edu_desc.end ? ' - ' : ''
+                  }${
+                    data.attributes.edu_desc.end
+                      ? data.attributes.edu_desc.end
+                      : ''
+                  }`}
                 </span>
                 <span className="text-sm text-slate-600 dark:text-slate-400">
-                  {data.title}
+                  {data.attributes.edu_desc.organization}
                 </span>
               </div>
-              <h3 className="font-semibold text-lg">{data.course}</h3>
-              <p className="text-sm">{data.desc}</p>
+              <h3 className="font-semibold text-lg">
+                {data.attributes.edu_desc.role}
+              </h3>
+              <p className="text-sm">{data.attributes.edu_desc.description}</p>
             </article>
           ))}
         </div>
@@ -32,23 +45,40 @@ const EduEx = () => {
       <section>
         <SectionTitle title="Experience" />
         <div className="mt-10 ml-5">
-          {experience.map((data, i) => (
+          {experiences.data.map((data, i) => (
             <article
               className={`px-8 pb-6 pt-14 relative ${
-                i + 1 === education.length ? 'border-b-0' : 'border-b'
+                i + 1 === educations.data.length ? 'border-b-0' : 'border-b'
               } border-l border-stone-300 dark:border-stone-700 flex flex-col space-y-2`}
               key={data.id}
             >
               <div className="flex items-center space-x-3 absolute top-4 bg-slate-50 dark:bg-gray-900 -left-5">
                 <span className="px-4 py-1 text-sm border-2 border-blue-500 rounded-full">
-                  {data.timeline}
+                  {`${data.attributes.exp_desc.start}${
+                    data.attributes.exp_desc.end ? ' - ' : ''
+                  }${
+                    data.attributes.exp_desc.end
+                      ? data.attributes.exp_desc.end
+                      : ''
+                  }`}
                 </span>
-                <span className="text-sm text-slate-600 dark:text-slate-400">
-                  {data.title}
-                </span>
+                <a
+                  href={data.attributes.external_link.url}
+                  target="_blank"
+                  className="flex items-center space-x-1"
+                >
+                  <span className="text-sm text-slate-600 dark:text-slate-400">
+                    {data.attributes.exp_desc.organization}{' '}
+                  </span>
+                  <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-lg">
+                    open_in_new
+                  </span>
+                </a>
               </div>
-              <h3 className="font-semibold text-lg">{data.role}</h3>
-              <p className="text-sm">{data.desc}</p>
+              <h3 className="font-semibold text-lg">
+                {data.attributes.exp_desc.role}
+              </h3>
+              <p className="text-sm">{data.attributes.exp_desc.description}</p>
             </article>
           ))}
         </div>

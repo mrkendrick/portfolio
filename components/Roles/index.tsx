@@ -1,32 +1,30 @@
 import React from 'react'
-import { roles } from '../../data'
+import { Skill, Skills } from '../../utils/types'
 import SectionTitle from '../SectionTitle'
 
-type RoleItemProps = {
-  role: string
-  icon: string
-  activities: string
-}
+type RolesProps = Skills
 
-const RoleItem = ({ activities, icon, role }: RoleItemProps) => (
+const RoleItem = ({ ...skill }: Skill) => (
   <article className="flex items-start space-x-5">
     <span className="material-symbols-outlined text-4xl text-blue-500 ">
-      {icon}
+      {skill.attributes.icon_name}
     </span>
     <div className="flex flex-col space-y-3">
-      <h3 className="text-xl font-bold">{role}</h3>
-      <p className="dark:text-slate-400 text-slate-600">{activities}</p>
+      <h3 className="text-xl font-bold">{skill.attributes.title}</h3>
+      <p className="dark:text-slate-400 text-slate-600">
+        {skill.attributes.description}
+      </p>
     </div>
   </article>
 )
 
-const Roles = () => {
+const Roles = ({ ...skills }: RolesProps) => {
   return (
     <section className="mt-36 w-[65%] mx-auto">
       <SectionTitle title="What I Do" />
 
       <div className="grid grid-cols-2 w-full mt-10 gap-10">
-        {roles.map((data) => (
+        {skills.data.map((data) => (
           <RoleItem key={data.id} {...data} />
         ))}
       </div>

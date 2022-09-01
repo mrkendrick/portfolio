@@ -289,3 +289,24 @@ export const skills = [
     },
   },
 ]
+
+export const projects = [
+  {
+    id: v4(),
+    title: 'Swirge Inc',
+    image: '/images/1.jpg',
+    tags: ['Frontend'],
+  },
+  {
+    id: v4(),
+    title: 'RunAm Technologies',
+    image: '/images/2.jpg',
+    tags: ['Fullstack'],
+  },
+  {
+    id: v4(),
+    title: 'Portfolio',
+    image: '/images/4.jpg',
+    tags: ['Frontend'],
+  },
+]
