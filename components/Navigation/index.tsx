@@ -1,9 +1,9 @@
-import React from 'react'
-import Logo from '../Logo'
-import ThemeButton from '../ThemeButton'
-import { v4 } from 'uuid'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import React from 'react'
+import { v4 } from 'uuid'
+import Logo from '../SectionTitle/Logo'
+import ThemeButton from '../ThemeButton'
 
 export const links = [
   {

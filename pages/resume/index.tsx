@@ -5,15 +5,16 @@ import CodingSkills from '../../components/CodingSkills'
 import EduEx from '../../components/EduEx'
 import PageTitle from '../../components/PageTitle'
 import ApiService from '../../utils/api'
-import { Educations, Experiences } from '../../utils/types'
+import { Educations, Experiences, ProLangs } from '../../utils/types'
 
 type Props = {
   education: Educations
   experience: Experiences
+  proLang: ProLangs
   error: boolean | null
 }
 
-const Resume: NextPage<Props> = ({ education, error, experience }) => {
+const Resume: NextPage<Props> = ({ education, error, experience, proLang }) => {
   return (
     <div>
       <Head>
@@ -26,22 +27,24 @@ const Resume: NextPage<Props> = ({ education, error, experience }) => {
       {!error && education && (
         <EduEx educations={education} experiences={experience} />
       )}
-      <CodingSkills />
+      {!error && proLang && <CodingSkills {...proLang} />}
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const [eduRes, expRes] = await Promise.all([
+    const [eduRes, expRes, proLangRes] = await Promise.all([
       ApiService.education(),
       ApiService.experience(),
+      ApiService.proLang(),
     ])
 
     return {
       props: {
         education: eduRes.data,
         experience: expRes.data,
+        proLang: proLangRes.data,
         error: null,
       },
       revalidate: 86400,

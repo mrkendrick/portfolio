@@ -1,6 +1,6 @@
 import axios, { AxiosRequestHeaders } from 'axios'
 
-const baseURL = 'https://portfolio-api-ycxg.onrender.com/api'
+const baseURL = 'https://api.mrkendrick.dev/api'
 
 const headers: AxiosRequestHeaders = {
   'Access-Control-Allow-Origin': true,
@@ -29,5 +29,11 @@ export default class ApiService {
 
   static async experience() {
     return api.get('/experiences?populate=*')
+  }
+
+  static async proLang() {
+    return api.get(
+      '/programming-languages?populate[icons][populate]=*&populate[external_link]=*'
+    )
   }
 }

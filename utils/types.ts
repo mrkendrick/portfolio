@@ -1,5 +1,11 @@
 import { Image, Meta, Timestamp } from './generics.types'
 
+export type ExternalLink = {
+  id: string
+  title: string
+  url: string
+}
+
 export type About = {
   data: {
     id: number
@@ -58,15 +64,28 @@ export type Experience = {
       role: string
       start: string
     }
-    external_link: {
-      id: string
-      title: string
-      url: string
-    }
+    external_link: ExternalLink
   } & Timestamp
 }
 
 export type Experiences = {
   data: Experience[]
+  meta: Meta
+}
+
+export type ProLang = {
+  id: number
+  attributes: {
+    name: string
+    external_link: ExternalLink
+    icons: {
+      light: string
+      dark: string
+    }
+  } & Timestamp
+}
+
+export type ProLangs = {
+  data: ProLang[]
   meta: Meta
 }
