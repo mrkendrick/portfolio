@@ -21,7 +21,7 @@ const EduEx = ({ educations, experiences }: Props) => {
               key={data.id}
             >
               <div className="flex items-center space-x-3 absolute top-4 bg-slate-50 dark:bg-gray-900 -left-5">
-                <span className="px-4 py-1 text-sm border-2 border-blue-500 rounded-full">
+                <span className="px-4 py-1 text-xs lg:text-sm border-2 border-blue-500 rounded-full">
                   {`${data.attributes.edu_desc.start}${
                     data.attributes.edu_desc.end ? ' - ' : ''
                   }${
@@ -30,7 +30,7 @@ const EduEx = ({ educations, experiences }: Props) => {
                       : ''
                   }`}
                 </span>
-                <span className="text-sm text-slate-600 dark:text-slate-400">
+                <span className="text-xs lg:text-sm text-slate-600 dark:text-slate-400">
                   {data.attributes.edu_desc.organization}
                 </span>
               </div>
@@ -53,7 +53,7 @@ const EduEx = ({ educations, experiences }: Props) => {
               key={data.id}
             >
               <div className="flex items-center space-x-3 absolute top-4 bg-slate-50 dark:bg-gray-900 -left-5">
-                <span className="px-4 py-1 text-sm border-2 border-blue-500 rounded-full">
+                <span className="px-4 py-1 text-xs lg:text-sm border-2 border-blue-500 rounded-full">
                   {`${data.attributes.exp_desc.start}${
                     data.attributes.exp_desc.end ? ' - ' : ''
                   }${
@@ -68,8 +68,8 @@ const EduEx = ({ educations, experiences }: Props) => {
                   className="flex items-center space-x-1"
                   rel="noreferrer"
                 >
-                  <span className="text-sm text-slate-600 dark:text-slate-400">
-                    {data.attributes.exp_desc.organization}{' '}
+                  <span className="text-xs lg:text-sm text-slate-600 dark:text-slate-400">
+                    {data.attributes.exp_desc.organization}
                   </span>
                   <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-lg">
                     open_in_new
