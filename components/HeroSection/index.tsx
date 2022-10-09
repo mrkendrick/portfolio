@@ -9,8 +9,8 @@ const HeroSection = ({ ...about }: Props) => {
   const { data } = about
 
   return (
-    <section className="mt-32 w-[55%] mx-auto flex items-center justify-between space-x-10">
-      <div className="min-h-[400px] min-w-[400px] border-[14px] border-blue-300 bg-center bg-cover bg-no-repeat overflow-hidden rounded-full relative">
+    <section className="mt-32 w-[90%] lg:w-[55%] mx-auto flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-10">
+      <div className="min-h-[350px] min-w-[350px] lg:min-h-[400px] lg:min-w-[400px] border-[14px] border-blue-300 bg-center bg-cover bg-no-repeat overflow-hidden rounded-full relative">
         <Image
           layout="fill"
           src={data.attributes.avatar.data.attributes.formats.large.url}
@@ -18,9 +18,10 @@ const HeroSection = ({ ...about }: Props) => {
             data.attributes.avatar.data.attributes.formats.thumbnail.url
           }
           placeholder="blur"
+          alt="Charles Duruaku"
         />
       </div>
-      <div className="flex flex-col space-y-5">
+      <div className="flex flex-col space-y-5 text-center lg:text-left">
         <h6 className="text-slate-500 dark:text-slate-400">
           {data.attributes.title}
         </h6>
@@ -28,11 +29,12 @@ const HeroSection = ({ ...about }: Props) => {
         <p className="text-slate-700 dark:text-slate-200">
           {data.attributes.profile_description}
         </p>
-        <div className="flex items-center space-x-6 font-semibold">
+        <div className="flex justify-center lg:justify-start items-center space-x-6 font-semibold">
           <a
             target="_blank"
             href={data.attributes.resume_url}
             className="border-2 border-blue-600 bg-stone-100 hover:bg-blue-600 hover:text-white dark:border-blue-600 rounded-full dark:bg-stone-800 px-10 py-2.5 dark:hover:bg-blue-600 transition-ease"
+            rel="noreferrer"
           >
             View CV
           </a>

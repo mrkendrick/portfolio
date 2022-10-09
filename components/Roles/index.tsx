@@ -20,10 +20,10 @@ const RoleItem = ({ ...skill }: Skill) => (
 
 const Roles = ({ ...skills }: RolesProps) => {
   return (
-    <section className="mt-36 w-[65%] mx-auto">
+    <section className="mt-36 container px-7 mx-auto">
       <SectionTitle title="What I Do" />
 
-      <div className="grid grid-cols-2 w-full mt-10 gap-10">
+      <div className="grid lg:grid-cols-2 w-full mt-10 gap-10">
         {skills.data.map((data) => (
           <RoleItem key={data.id} {...data} />
         ))}

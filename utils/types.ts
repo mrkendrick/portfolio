@@ -89,3 +89,10 @@ export type ProLangs = {
   data: ProLang[]
   meta: Meta
 }
+
+export type SendEmail = {
+  name: string
+  email: string
+  subject: string
+  message: string
+}

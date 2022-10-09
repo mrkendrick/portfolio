@@ -9,7 +9,7 @@ type Props = {
 
 const EduEx = ({ educations, experiences }: Props) => {
   return (
-    <section className="flex items-start justify-between space-x-10 mt-28 w-[70%] mx-auto">
+    <section className="flex flex-col lg:flex-row items-start justify-between space-y-16 lg:space-y-0 lg:space-x-10 mt-28 container px-7 mx-auto">
       <section>
         <SectionTitle title="Education" />
         <div className="mt-10 ml-5">
@@ -66,6 +66,7 @@ const EduEx = ({ educations, experiences }: Props) => {
                   href={data.attributes.external_link.url}
                   target="_blank"
                   className="flex items-center space-x-1"
+                  rel="noreferrer"
                 >
                   <span className="text-sm text-slate-600 dark:text-slate-400">
                     {data.attributes.exp_desc.organization}{' '}
