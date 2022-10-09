@@ -34,7 +34,7 @@ const MobileNav = ({ asPath }: { asPath: string }) => {
   return (
     <div className="lg:hidden">
       <button onClick={() => setIsOpen(!isOpen)}>
-        <span className="material-symbols-outlined text-6xl">
+        <span className="material-symbols-outlined text-5xl">
           {isOpen ? 'close' : 'menu'}
         </span>
       </button>
