@@ -23,7 +23,7 @@ const Project: NextPage<Props> = ({ project, error }) => {
       <section className="mt-28 container px-7 mx-auto">
         <div className="items-start w-full flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
           <section className="grow">
-            <div className="h-[22rem] lg:h-[30rem] overflow-hidden relative rounded-md">
+            <div className="h-[18rem] lg:h-[30rem] overflow-hidden relative rounded-md">
               <Image
                 src={
                   project.data.attributes.image.data.attributes.formats.large
