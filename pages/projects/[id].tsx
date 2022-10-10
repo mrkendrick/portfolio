@@ -77,7 +77,11 @@ const Project: NextPage<Props> = ({ project, error }) => {
       </section>
     </div>
   ) : (
-    <></>
+    <>
+      <span className="mt-20 text-center text-2xl py-10">
+        Project not found
+      </span>
+    </>
   )
 }
 

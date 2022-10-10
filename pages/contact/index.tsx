@@ -180,7 +180,7 @@ const Contact = () => {
           <button
             disabled={loading}
             onClick={handleSubmit(submit)}
-            className="mt-10 w-full lg:w-fit border-2 border-blue-600 bg-stone-100 hover:bg-blue-600 hover:text-white dark:border-blue-600 rounded-full dark:bg-stone-800 px-10 py-2.5 dark:hover:bg-blue-600 transition-ease"
+            className="mt-10 w-full lg:w-fit border-2 border-blue-600 disabled:bg-stone-600 disabled:text-gray-400 bg-stone-100 hover:bg-blue-600 hover:text-white dark:border-blue-600 rounded-full dark:bg-stone-800 px-10 py-2.5 dark:hover:bg-blue-600 transition-ease"
           >
             Send Message
           </button>
