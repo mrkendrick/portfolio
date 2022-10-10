@@ -27,6 +27,14 @@ export default class ApiService {
     return api.get('/educations?populate=edu_desc')
   }
 
+  static async projects() {
+    return api.get('/projects?populate=*')
+  }
+
+  static async project(id: string) {
+    return api.get(`/projects/${id}?populate=*`)
+  }
+
   static async experience() {
     return api.get('/experiences?populate=*')
   }

@@ -9,7 +9,7 @@ const HeroSection = ({ ...about }: Props) => {
   const { data } = about
 
   return (
-    <section className="mt-32 w-[90%] lg:w-[55%] mx-auto flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-10">
+    <section className="mt-32 w-[93%] lg:w-[70%] mx-auto flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-10">
       <div className="min-h-[350px] min-w-[350px] lg:min-h-[400px] lg:min-w-[400px] border-[14px] border-blue-300 bg-center bg-cover bg-no-repeat overflow-hidden rounded-full relative">
         <Image
           layout="fill"

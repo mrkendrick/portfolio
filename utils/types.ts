@@ -6,6 +6,13 @@ export type ExternalLink = {
   url: string
 }
 
+export type ProjectLink = {
+  id: string
+  title: string
+  url: string
+  platform: 'website' | 'codebase'
+}
+
 export type About = {
   data: {
     id: number
@@ -17,6 +24,33 @@ export type About = {
       title: string
     } & Timestamp
   }
+  meta: Meta
+}
+
+type Stack = {
+  id: number
+  name: string
+}
+
+type Tech = {
+  id: number
+  name: string
+}
+
+export type Project = {
+  id: number
+  attributes: {
+    description: string
+    image: Image
+    links: ProjectLink[]
+    stacks: Stack[]
+    techs: Tech[]
+    title: string
+  } & Timestamp
+}
+
+export type Projects = {
+  data: Project[]
   meta: Meta
 }
 
