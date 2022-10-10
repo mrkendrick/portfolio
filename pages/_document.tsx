@@ -22,7 +22,7 @@ class MyDocument extends Document {
             name="description"
             content={`Charles Duruaku is a Software Engineer with ${
               new Date().getFullYear() - 2017
-            } years of experience in building software related service like web applications, server-side appplications and mobile applications. He also manages cloud-based infrastructures such as Servers, S3 Buckets, Kubernets, Cloud Storage and lots more`}
+            } years of experience in building software related services like web applications, server-side applications and mobile applications. He also manages cloud-based infrastructures such as Cloud Servers, S3 Buckets, Kubernets, Cloud Storage and lots more.`}
           />
           <link rel="icon" href="/images/letter-c.png" />
           <link rel="apple-touch-icon" href="/images/letter-c.png" />
