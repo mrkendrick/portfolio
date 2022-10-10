@@ -22,7 +22,9 @@ const Resume: NextPage<Props> = ({ education, error, experience, proLang }) => {
       </Head>
       <PageTitle
         title="Resume"
-        subTitle={`${new Date().getFullYear() - 2017} Years of Experience`}
+        subTitle={`${
+          new Date().getFullYear() - 2017
+        } Years of Professional Experience`}
       />
       {!error && education && (
         <EduEx educations={education} experiences={experience} />
