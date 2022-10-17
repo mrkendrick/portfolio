@@ -36,7 +36,7 @@ const HeroSection = ({ ...about }: Props) => {
             className="border-2 border-blue-600 bg-stone-100 hover:bg-blue-600 hover:text-white dark:border-blue-600 rounded-full dark:bg-stone-800 px-10 py-2.5 dark:hover:bg-blue-600 transition-ease"
             rel="noreferrer"
           >
-            View CV
+            LinkedIn
           </a>
           <Link href="/contact" passHref>
             <a className="border-2 hover:bg-stone-800 hover:text-white hover:border-stone-800 dark:border-slate-200 rounded-full dark:bg-stone-800 px-10 py-2.5 dark:hover:bg-slate-200 dark:hover:text-slate-800 transition-ease">
